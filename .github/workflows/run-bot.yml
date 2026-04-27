@@ -1,7 +1,7 @@
 name: Super Intelligence Bot
 on:
   schedule:
-    - cron: '0 0 * * *' # 7 โมงเช้าไทย
+    - cron: '0 0 * * *'
   workflow_dispatch:
 
 jobs:
@@ -17,4 +17,5 @@ jobs:
           AI_INTEGRATIONS_OPENAI_API_KEY: ${{ secrets.AI_INTEGRATIONS_OPENAI_API_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: npx tsx super-bot.ts
+        # เพิ่มการติดตั้ง axios ตรงนี้ครับ
+        run: npm install axios && npx tsx super-bot.ts
